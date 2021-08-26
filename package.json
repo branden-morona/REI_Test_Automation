@@ -1,0 +1,31 @@
+{
+  "name": "REI_Test_Automation",
+  "version": "1.0.0",
+  "description": "Automated testing of rei.com",
+  "main": "index.js",
+  "dependencies": {
+    "chromedriver": "^92.0.1",
+    "geckodriver": "^2.0.3",
+    "selenium-webdriver": "^4.0.0-beta.4"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.0.1",
+    "jest": "^27.0.6",
+    "ts-jest": "^27.0.5",
+    "typescript": "^4.3.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/branden-morona/REI_Test_Automation.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/branden-morona/REI_Test_Automation/issues"
+  },
+  "homepage": "https://github.com/branden-morona/REI_Test_Automation#readme"
+}
