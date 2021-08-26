@@ -22,7 +22,7 @@ To conduct the test, use `npm jest [test name]` to initialize and run the select
 
 - buy.test.ts tests the process of searching an item, adding it to cart, and going through the buying process. 
 - location.test.ts tests locating a store and finding its address. 
--reiBasePage.ts is the base page that holds the test selectors and methods.
+- reiBasePage.ts is the base page that holds the test selectors and methods.
 
 ## Data Files
 Files used: 
