@@ -63,14 +63,17 @@ export class BasePage {
         this.driver = driver;
     }
 
+    // Opens browser to designated URL
     async navigate() {
         await this.driver.get(this.url);
     }
 
+    // Maximizes page
     async max() {
         await this.driver.manage().window().maximize()
     }
 
+    // Closes browser
     async quit() {
         await this.driver.quit()
     }
@@ -83,6 +86,8 @@ export class BasePage {
         await this.driver.wait(until.elementLocated(elementBy));
         return (await this.driver.findElement(elementBy)).click();
     }
+
+    // Types input into located element
     async sendKeys(elementBy: By, keys) {
         await this.driver.wait(until.elementLocated(elementBy));
         return this.driver.findElement(elementBy).sendKeys(keys);
@@ -93,6 +98,7 @@ export class BasePage {
         return (await this.driver.findElement(elementBy)).getText();
     }
 
+    // Locates search bar and types input
     async doSearch(text: string) {
         return this.sendKeys(this.searchBar, `${text}`);
     }
@@ -150,4 +156,5 @@ export class BasePage {
         await this.driver.wait(until.elementIsVisible(this.driver.findElement(this.stateAd)));
         await this.driver.findElement(this.stateAd).click();
     }
+
 }

@@ -12,12 +12,12 @@ const page = new BasePage(driver);
 test("search", async () => {
     await page.navigate();
     await page.max();
-    await page.doSearch("snowboards\n");
-    await page.click(page.board);
-    await page.click(page.size);
-    await page.subscribe();
+    await page.doSearch("snowboards\n"); // Searches "snowborads in home page search bar"
+    await page.click(page.board);  // Clicks T. Rice Orca - 2021-2021
+    await page.click(page.size);  // Selects 150cm size
+    await page.subscribe();  // Exits REI newsletter modal popup
     await page.click(page.addCart);
-    await page.cartPopup();
+    await page.cartPopup();  // Begins purchase process
     await page.click(page.proceed);
     await page.click(page.guest);
     await page.click(page.noMember);
