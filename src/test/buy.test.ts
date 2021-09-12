@@ -9,7 +9,7 @@ import { BasePage } from "./reiBasePage";
 const page = new BasePage(driver);
 
 // Tests pathway and accuracy for search and purchase functionality
-test("search", async () => {
+test("search and purchase", async () => {
     await page.navigate();
     await page.max();
     await page.doSearch("snowboards\n"); // Searches "snowborads in home page search bar"

@@ -10,7 +10,6 @@ export class BasePage {
     driver: WebDriver;
     url: string = "https://www.rei.com/";
 
-
     // Selectors 
 
     // Inputs for purchasing as a guest
@@ -28,8 +27,8 @@ export class BasePage {
     // Selector specific to T. Rice Orca Snowboard - 2021/2022
     board: By = By.xpath("//img[contains(@src, '/media/1e62a9ed-3db0-493e-a26b-61ca46c9b068')]")
     // 150cm board size button
-    size: By = By.xpath("//button[contains(@data-skus, '1962480004')]")
-    addCart: By = By.css("#add-to-cart")
+    size: By = By.xpath("//button[contains(@data-skus-size, '1962480004')]")
+    addCart: By = By.css("#add-to-cart-button")
     checkout: By = By.xpath("//button[contains(@data-ui, 'btn-proceed-to-checkout')]")
     // X button on modal window for signing up for REI emails
     closeAd: By = By.css(".close-text")
@@ -55,6 +54,10 @@ export class BasePage {
     waFlag: By = By.xpath("//a[contains(text(), 'Seattle Flagship')]")
     // Seattle Flagship address selector
     flagAdd: By = By.xpath("//p[contains(@data-ui, 'main-address')]")
+    outletButton: By = By.xpath("//a[contains(@data-analytics-id, 'universal_nav:rei garage')]")
+    usedGear: By = By.xpath("//a[contains(@data-analytics-id, 'universal_nav:used gear')]")
+    reiAdventures: By = By.xpath("//a[contains(@data-analytics-id, 'universal_nav:rei adventures')]")
+    reiHome: By = By.xpath("//img[contains(@src, '//satchel.rei.com/media/img/header/rei-co-op-logo-black.svg')]")
 
 
 
@@ -105,6 +108,7 @@ export class BasePage {
 
     // Closes ad to sign up for REI emails
     async subscribe() {
+        await this.driver.wait(until.elementLocated(this.closeAd));
         await this.driver.wait(until.elementIsVisible(this.driver.findElement(this.closeAd)));
         await this.driver.findElement(this.closeAd).click();
     }
@@ -156,5 +160,4 @@ export class BasePage {
         await this.driver.wait(until.elementIsVisible(this.driver.findElement(this.stateAd)));
         await this.driver.findElement(this.stateAd).click();
     }
-
 }
